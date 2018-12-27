@@ -8,14 +8,20 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   title: string;
-  valueA: string;
+  ingredient: string;
   valueB: string;
+  ingredients: any;
 
   constructor() {
-    this.title = 'Titulo desde ts';
+    this.title = 'Ingredientes';
+    this.ingredients = []; // Inicializar el arreglo que se declaró como tipo any
   }
 
   ngOnInit() {
+  }
+
+  addIngredient() {
+    this.ingredients.push(this.ingredient);
   }
 
 }

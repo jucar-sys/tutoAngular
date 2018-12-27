@@ -4,8 +4,10 @@
 
 <form class="example-form">
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Favorite food" [(ngModel)]="valueA" [ngModelOptions]="{standalone: true}" value="Sushi">
+    <input matInput placeholder="Favorite food" [(ngModel)]="ingredient" [ngModelOptions]="{standalone: true}" value="Sushi">
   </mat-form-field>
+
+  <button (click)="addIngredient()" mat-button>Agregar ingrediente</button>
 
   <mat-form-field class="example-full-width">
     <textarea matInput placeholder="Leave a comment" [(ngModel)]="valueB" [ngModelOptions]="{standalone: true}"></textarea>
@@ -13,9 +15,11 @@
 </form>
 
 <p>
-  {{ valueA }}
-</p>
-
-<p>
   {{ valueB }}
 </p>
+
+<p>///////////////////////////////////////////////////////////////////////////////////</p>
+
+<mat-list>
+  <mat-list-item *ngFor="let item of ingredients"> {{ item }} </mat-list-item>
+ </mat-list>
